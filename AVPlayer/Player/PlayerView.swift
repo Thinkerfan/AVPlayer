@@ -348,7 +348,7 @@ extension PlayerView {
             
             isDragging = true // 标记开始拖动
             pauseVideo() // 暂停播放
-            dragDirection = .none
+            dragDirection = Optional.none
             
             // 避免拖动过程中工具条自动消失
             invalidateToolBarTimer()
@@ -368,12 +368,12 @@ extension PlayerView {
             secondPoint = pan.location(in: self)
             
             // 判断是左右滑动还是上下滑动
-            let horValue = fabs(firstPoint.x - secondPoint.x) // 水平方向
-            let verValue = fabs(firstPoint.y - secondPoint.y) // 竖直方向
+            let horValue = abs(firstPoint.x - secondPoint.x) // 水平方向
+            let verValue = abs(firstPoint.y - secondPoint.y) // 竖直方向
             
             // 确定本次手势操作是水平滑动还是竖直滑动，避免一次手势操作中出现水平和竖直先后都出现的情况
             // 比如先向右滑动30，然后继续向上滑动50，就会出现一次手势操作中先调节视频进度又调节了音量
-            if dragDirection == .none {
+            if dragDirection == Optional.none {
                 if horValue > verValue {
                     dragDirection = .horizontal
                 } else {

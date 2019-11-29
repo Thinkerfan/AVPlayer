@@ -156,6 +156,7 @@ extension PlayerManager {// MARK: 外部调用方法
         playerView.startLoadingAnimation()
         
         let asset = getAVURLAsset(urlStr: urlStr)
+        print(asset)
         playerView.playerItem = AVPlayerItem(asset: asset)
         changePlayerItem()
         playerView.player.replaceCurrentItem(with: playerView.playerItem)
@@ -172,7 +173,6 @@ extension PlayerManager {// MARK: 外部调用方法
     
     // 调整视频进度
     func seekToTime(_ startTime: Int) {
-        
         playerView.seekToVideo(startTime)
     }
     

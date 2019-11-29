@@ -81,7 +81,7 @@ class TestController: UIViewController, PlayerManagerDelegate {
         
         playerManager.delegate = self
         playerManager.playUrlStr = "http://baobab.wdjcdn.com/1456665467509qingshu.mp4"
-        playerManager.seekToTime(5)// 跳转至第N秒的进度位置，从头播放则是0
+        playerManager.seekToTime(0)// 跳转至第N秒的进度位置，从头播放则是0
         playerManager.play()
     }
     
@@ -92,12 +92,12 @@ class TestController: UIViewController, PlayerManagerDelegate {
         let startTime: Int
         if btn.tag == 1 {
             urlStr = "http://static.tripbe.com/videofiles/20121214/9533522808.f4v.mp4"
-            startTime = 35
+            startTime = 0
         } else if btn.tag == 2 {
             urlStr = "http://baobab.wdjcdn.com/1457162012752491010143.mp4"
-            startTime = 15
+            startTime = 0
         } else {
-            urlStr = ""
+            urlStr = "http://baobab.wandoujia.com/api/v1/playUrl?vid=2616&editionType=normal"
             startTime = 0
         }
         // 传入要切换的播放地址和定位的时间(秒)
