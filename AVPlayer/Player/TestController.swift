@@ -86,7 +86,7 @@ class TestController: UIViewController, PlayerManagerDelegate {
     }
     
     // 切换播放视频
-    func changeVideo(btn: UIButton) {
+     @objc func changeVideo(btn: UIButton) {
         
         let urlStr: String
         let startTime: Int
@@ -112,7 +112,7 @@ class TestController: UIViewController, PlayerManagerDelegate {
     }
     
     // push跳转
-    func jumpToViewController() {
+    @objc func jumpToViewController() {
         
         playerManager.pause()
         navigationController?.pushViewController(ViewController(), animated: true)

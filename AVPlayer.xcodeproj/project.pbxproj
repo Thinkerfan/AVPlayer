@@ -230,7 +230,7 @@
 				TargetAttributes = {
 					4562C0C11F2057E60036E137 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = RWKH7R4DZR;
+						DevelopmentTeam = AYWA8Z6G75;
 						ProvisioningStyle = Automatic;
 					};
 					4562C0D51F2057E60036E137 = {
@@ -252,6 +252,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -459,12 +460,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = RWKH7R4DZR;
+				DEVELOPMENT_TEAM = AYWA8Z6G75;
 				INFOPLIST_FILE = AVPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tony.ylp.AVPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -472,12 +473,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = RWKH7R4DZR;
+				DEVELOPMENT_TEAM = AYWA8Z6G75;
 				INFOPLIST_FILE = AVPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tony.ylp.AVPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
