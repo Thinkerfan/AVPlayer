@@ -11,6 +11,23 @@ import CoreMedia
 
 class TestController: UIViewController, PlayerManagerDelegate {
     
+    var statusBarShouldBeHidden = false
+    override var prefersStatusBarHidden: Bool{
+        return true
+    }
+    
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return .slide
+    }
+    
+    func isHideStatusBar(_ bool: Bool, _ delay : CFTimeInterval = 0){
+        statusBarShouldBeHidden = bool
+        UIView.animate(withDuration: 0.4, delay: delay, options: [], animations: {
+            self.setNeedsStatusBarAppearanceUpdate()
+        }) { (finished) in
+        }
+    }
+    
     var playerManager: PlayerManager!
     
     lazy var videoBtn: UIButton = {
@@ -71,6 +88,9 @@ class TestController: UIViewController, PlayerManagerDelegate {
         
         view.backgroundColor = UIColor.white
         
+        isHideStatusBar(true)
+
+        
         // 添加视频播放器
         playerManager = PlayerManager(playerFrame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 210), contentView: self.view)
         view.addSubview(playerManager.playerView)
@@ -88,7 +108,7 @@ class TestController: UIViewController, PlayerManagerDelegate {
     }
     
     // 切换播放视频
-     @objc func changeVideo(btn: UIButton) {
+    @objc func changeVideo(btn: UIButton) {
         
         let urlStr: String
         let startTime: Int
@@ -96,9 +116,9 @@ class TestController: UIViewController, PlayerManagerDelegate {
             urlStr = "http://static.tripbe.com/videofiles/20121214/9533522808.f4v.mp4"
             startTime = 0
         } else if btn.tag == 2 {
-//            urlStr = "http://mudan.iii-kuyunzy.com/share/e1021d43911ca2c1845910d84f40aeae"
+            //            urlStr = "http://mudan.iii-kuyunzy.com/share/e1021d43911ca2c1845910d84f40aeae"
             urlStr = "http://mitao.xiazaikuyun.com/20191126/70729_ff0f09c9/极速救援DVD版EP0.mp4"
-//            urlStr = "http://tudou.diediao-kuyun.com/20191128/8529_f9fd9642/index.m3u8"
+            //            urlStr = "http://tudou.diediao-kuyun.com/20191128/8529_f9fd9642/index.m3u8"
             startTime = 0
         } else {
             urlStr = "http://baobab.wandoujia.com/api/v1/playUrl?vid=2616&editionType=normal"
