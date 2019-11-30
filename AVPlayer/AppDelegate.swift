@@ -15,8 +15,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = rooterVC
+        window?.makeKeyAndVisible()
         return true
+    }
+    
+    var rooterVC:UIViewController{
+        let vv_vcTab = UITabBarController()
+        
+        let vv_tab1 = ViewController()
+        vv_tab1.title = "List"
+        vv_tab1.tabBarItem = UITabBarItem(title: "List", image: UIImage(named: "aa_tab"), selectedImage:UIImage(named: "aa_tabSel"))
+        let nav1 = UINavigationController(rootViewController: vv_tab1)
+
+        let vv_tab2 = TestController()
+        vv_tab2.title = "Single"
+        vv_tab2.tabBarItem = UITabBarItem(title: "Single", image: nil, selectedImage:nil)
+        let nav2 = UINavigationController(rootViewController: vv_tab2)
+        vv_vcTab.viewControllers = [nav1,nav2]
+        return vv_vcTab
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
