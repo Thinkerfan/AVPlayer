@@ -11,22 +11,21 @@ import CoreMedia
 
 class TestController: UIViewController, PlayerManagerDelegate {
     
-    var statusBarShouldBeHidden = false
     override var prefersStatusBarHidden: Bool{
         return true
     }
-    
-    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
-        return .slide
-    }
-    
-    func isHideStatusBar(_ bool: Bool, _ delay : CFTimeInterval = 0){
-        statusBarShouldBeHidden = bool
-        UIView.animate(withDuration: 0.4, delay: delay, options: [], animations: {
-            self.setNeedsStatusBarAppearanceUpdate()
-        }) { (finished) in
-        }
-    }
+//    var statusBarShouldBeHidden = false
+//    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+//        return .slide
+//    }
+//
+//    func isHideStatusBar(_ bool: Bool, _ delay : CFTimeInterval = 0){
+//        statusBarShouldBeHidden = bool
+//        UIView.animate(withDuration: 0.4, delay: delay, options: [], animations: {
+//            self.setNeedsStatusBarAppearanceUpdate()
+//        }) { (finished) in
+//        }
+//    }
     
     var playerManager: PlayerManager!
     
@@ -88,7 +87,7 @@ class TestController: UIViewController, PlayerManagerDelegate {
         
         view.backgroundColor = UIColor.white
         
-        isHideStatusBar(true)
+//        isHideStatusBar(true)
 
         
         // 添加视频播放器
