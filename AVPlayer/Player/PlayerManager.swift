@@ -17,12 +17,6 @@ protocol PlayerManagerDelegate: class {
     func playFinished() // 播放完成
 }
 
-extension PlayerManagerDelegate {
-    
-    func playerViewShare() {} // 分享
-    func playFinished() {} // 播放完成
-}
-
 enum ErrorType { // 异常错误类型
     case playUrlNull // 播放地址为空
 }
@@ -212,20 +206,19 @@ extension PlayerManager {
     
     // 缓存条、视频加载状态监听
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        
+
         if context == &timeContext {
             // 刷新缓冲条进度
             playerView.setProgressValue()
             
         } else if context == &statusContext {
-            if playerView.player.status == AVPlayer.Status.readyToPlay {
+            if playerView.player.status == AVPlayer.Status.readyToPlay {                
                 // 根据时间重新调整时间frame值
                 playerView.resizeTimeLabel()
                 playerView.stopLoadingAnimation()
                 
             } else if playerView.player.status == AVPlayer.Status.unknown {
                 playerView.startLoadingAnimation()
-                
             } else if playerView.player.status == AVPlayer.Status.failed {
                 playerView.stopLoadingAnimation()
             }

@@ -80,7 +80,7 @@ class TestController: UIViewController, PlayerManagerDelegate {
         view.addSubview(jumpBtn)
         
         playerManager.delegate = self
-        playerManager.playUrlStr = "http://baobab.wdjcdn.com/1456665467509qingshu.mp4"
+        playerManager.playUrlStr = "http://tudou.diediao-kuyun.com/share/8989e07fc124e7a9bcbdebcc8ace2bc0"
         playerManager.seekToTime(0)// 跳转至第N秒的进度位置，从头播放则是0
         playerManager.play()
     }
@@ -94,7 +94,9 @@ class TestController: UIViewController, PlayerManagerDelegate {
             urlStr = "http://static.tripbe.com/videofiles/20121214/9533522808.f4v.mp4"
             startTime = 0
         } else if btn.tag == 2 {
-            urlStr = "http://baobab.wdjcdn.com/1457162012752491010143.mp4"
+//            urlStr = "http://mudan.iii-kuyunzy.com/share/e1021d43911ca2c1845910d84f40aeae"
+            urlStr = "http://mitao.xiazaikuyun.com/20191126/70729_ff0f09c9/极速救援DVD版EP0.mp4"
+//            urlStr = "http://tudou.diediao-kuyun.com/20191128/8529_f9fd9642/index.m3u8"
             startTime = 0
         } else {
             urlStr = "http://baobab.wandoujia.com/api/v1/playUrl?vid=2616&editionType=normal"
